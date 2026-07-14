@@ -26,12 +26,12 @@
 	<script type='text/javascript'>
   document.addEventListener("visibilitychange", function() {
     if (document.hidden) {
-      console.log("Pestaña oculta: Pausando emulador...");
+      console.log("Hidden tab: Pausing emulator...");
       if (Module._PauseEmulator) { 
         Module._PauseEmulator(); 
       }
     } else {
-      console.log("Pestaña visible: Reanudando emulador...");
+      console.log("Visible tab: Resuming emulator...");
       if (Module._ResumeEmulator) {
         Module._ResumeEmulator();
       }
@@ -46,18 +46,18 @@
     preRun: [function() {
       Module.addRunDependency('load-rom');
 
-      fetch('/ROMS/game.bin')
+      fetch('./ROMS/game.bin')
         .then(response => response.arrayBuffer())
         .then(arrayBuffer => {
           const data = new Uint8Array(arrayBuffer);
           if (!FS.analyzePath('/ROMS').exists) FS.mkdir('/ROMS');
           FS.writeFile('/ROMS/game.bin', data);
-          console.log("ROM inyectada exitosamente.");
+          console.log("ROM.");
           
           Module.removeRunDependency('load-rom');
         })
         .catch(err => {
-          console.error("Error al cargar ROM:", err);
+          console.error("ROM error:", err);
           Module.removeRunDependency('load-rom'); 
         });
     }],
