@@ -16,3 +16,8 @@ cmake make .. ninja
 ninja
 ```
 - After you can get the wasm, js, html and data file.
+## Notes:
+- This emulator includes a BIOS file.
+- You need a ROM named game.bin (you can change this in the .html file).
+- This is an experimental version.
+## Thanks for read!
