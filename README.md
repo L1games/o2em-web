@@ -8,7 +8,7 @@ This emulator is based on the O2EM and O2EM-NG emulators, which have been ported
 - Have Cmake installed.
 
 ## How to build?
-To compile and build the project, run the following command in your terminal (Windows):
+- To compile and build the project, run the following command in your terminal (Windows):
 ```bash
 mkdir build-wasm
 cd build-wasm
