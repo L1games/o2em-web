@@ -1,0 +1,1 @@
+Place the ROM in this folder.
