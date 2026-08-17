@@ -14,8 +14,11 @@
         overflow: hidden;
     }
     #canvas {
-        width: 800px;
-        height: 600px;
+        width: 95vw;
+        height: 95vh;
+        aspect-ratio: 4 / 3;
+        max-width: calc(95vh * (4 / 3));
+        max-height: calc(95vw * (3 / 4));  
         image-rendering: pixelated;
         display: block;
     }
@@ -23,21 +26,6 @@
   </head>
   <body>     
     <canvas id="canvas" oncontextmenu="event.preventDefault()" tabindex=-1></canvas>
-	<script type='text/javascript'>
-  document.addEventListener("visibilitychange", function() {
-    if (document.hidden) {
-      console.log("Hidden tab: Pausing emulator...");
-      if (Module._PauseEmulator) { 
-        Module._PauseEmulator(); 
-      }
-    } else {
-      console.log("Visible tab: Resuming emulator...");
-      if (Module._ResumeEmulator) {
-        Module._ResumeEmulator();
-      }
-    }
-  });
-</script>
 
 <script type='text/javascript'>
   var Module = {
@@ -67,3 +55,4 @@
     <script src="o2em.html.js"></script>
   </body>
 </html>
+
